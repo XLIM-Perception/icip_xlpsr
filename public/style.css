@@ -41,7 +41,7 @@ body {
 }
 
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/images/cover_image.jpg) center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(public/images/cover_image.jpg) center/cover no-repeat;
   padding: 6rem 1rem;
   animation: fadeIn 1s ease-in-out;
 }
