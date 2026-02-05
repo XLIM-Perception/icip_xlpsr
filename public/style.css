@@ -11,6 +11,7 @@
   --transition: all 0.3s ease;
 }
 
+/* === BASE STYLES === */
 body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--light-color);
@@ -18,27 +19,12 @@ body {
   line-height: 1.6;
 }
 
-/* Additional general styles for timeline integration */
-.badge-phase {
-    font-size: 0.75rem;
-    padding: 4px 10px;
-    margin-left: 10px;
-}
-
-/* Ensure proper text alignment for timeline descriptions */
-.timeline-desc {
-    text-align: left;
-}
-
-/* Make sure the timeline respects the main container's text justification */
-main.container .timeline-desc {
-    text-align: left !important;
-}
-
 /* Justify text in paragraphs within the main content */
 main.container p {
     text-align: justify;
 }
+
+/* === NAVIGATION === */
 .navbar {
   transition: var(--transition);
   box-shadow: var(--shadow);
@@ -61,22 +47,64 @@ main.container p {
   color: var(--secondary-color) !important;
 }
 
+/* === HERO SECTIONS === */
+/* Main Hero Section - Used on Home, Dataset, Registration, etc. */
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(images/cover_image.jpg) center/cover no-repeat;
   padding: 6rem 1rem;
   animation: fadeIn 1s ease-in-out;
 }
 
-.hero h2 {
+.hero h1 {
   font-weight: 700;
   font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
+.hero .lead {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero a.text-white {
+  text-decoration: underline;
+  transition: opacity 0.3s ease;
+}
+
+.hero a.text-white:hover {
+  opacity: 0.8;
+}
+
+/* Timeline-specific hero (centered text) */
+.hero-timeline {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/cover_image.jpg) center/cover no-repeat;
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.hero-timeline h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero-timeline .lead {
+  font-size: 1.3rem;
+  max-width: 800px;
+  margin: 0 auto 1rem;
+}
+
+/* === ANIMATIONS === */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* === MAIN CONTENT === */
 main.container {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -91,17 +119,13 @@ section {
   animation: slideUp 0.5s ease-in-out;
 }
 
-@keyframes slideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
 h2.h4, h2.h5 {
   font-weight: 700;
   color: var(--primary-color);
   margin-bottom: 1.5rem;
 }
 
+/* === COMPONENTS === */
 .table {
   box-shadow: var(--shadow);
 }
@@ -144,6 +168,121 @@ h2.h4, h2.h5 {
   transform: scale(1.05);
 }
 
+/* === TIMELINE SPECIFIC (from timeline.css) === */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: calc(50% + 30px);
+}
+
+.timeline-item:nth-child(even) {
+  justify-content: flex-start;
+  padding-left: calc(50% + 30px);
+  padding-right: 0;
+}
+
+.timeline-content {
+  background: white;
+  padding: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border-left: 5px solid var(--primary-color);
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  transition: var(--transition);
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  border-left: none;
+  border-right: 5px solid var(--secondary-color);
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-date {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timeline-item:nth-child(even) .timeline-date {
+  color: var(--secondary-color);
+}
+
+.timeline-milestone {
+  font-weight: 600;
+  color: var(--dark-color);
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+}
+
+.timeline-desc {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: left; /* Specific override for timeline */
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 4px solid var(--primary-color);
+  border-radius: 50%;
+  top: 30px;
+  right: -42px;
+  z-index: 1;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+  right: auto;
+  left: -42px;
+  border-color: var(--secondary-color);
+}
+
+.current-phase {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb) !important;
+  border-left: 5px solid #1976d2 !important;
+}
+
+.badge-phase {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  margin-left: 10px;
+}
+
+/* === FOOTER === */
 .footer {
   background-color: var(--dark-color);
 }
@@ -152,13 +291,23 @@ h2.h4, h2.h5 {
     max-width: 200px;
 }
 
-/* Responsive Design */
+/* === RESPONSIVE DESIGN === */
 @media (max-width: 992px) {
-  .hero {
+  .hero, .hero-timeline {
     padding: 4rem 1rem;
   }
-  .hero h2 {
-    font-size: 2rem;
+  
+  .hero h1, .hero-timeline h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero .lead, .hero-timeline .lead {
+    font-size: 1.3rem;
+  }
+  
+  /* Timeline responsive */
+  .timeline::before {
+    left: 30px;
   }
 }
 
@@ -166,8 +315,57 @@ h2.h4, h2.h5 {
   section {
     padding: 2rem 1rem;
   }
+  
   .navbar-nav {
     text-align: center;
   }
+  
+  .hero, .hero-timeline {
+    padding: 3rem 1rem;
+  }
+  
+  .hero h1, .hero-timeline h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero .lead, .hero-timeline .lead {
+    font-size: 1.1rem;
+  }
+  
+  .hero .text-lg-end {
+    text-align: center !important;
+    margin-top: 2rem;
+  }
+  
+  /* Timeline mobile adjustments */
+  .timeline-item,
+  .timeline-item:nth-child(even) {
+    justify-content: flex-start;
+    padding-left: 70px;
+    padding-right: 0;
+  }
+  
+  .timeline-content::before,
+  .timeline-item:nth-child(even) .timeline-content::before {
+    left: -40px;
+    right: auto;
+  }
 }
 
+@media (max-width: 576px) {
+  .hero-timeline h1 {
+    font-size: 1.6rem;
+  }
+  
+  .timeline-content {
+    padding: 20px 15px;
+  }
+  
+  .timeline-date {
+    font-size: 1rem;
+  }
+  
+  .timeline-milestone {
+    font-size: 1rem;
+  }
+}
