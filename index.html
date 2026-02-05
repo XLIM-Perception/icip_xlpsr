@@ -1,159 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The Extreme License Plate Super-Resolution (XLPSR) Challenge</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="public/style.css" />
-    <script>
-      window.MathJax = { tex: { inlineMath: [['\\(','\\)'], ['$', '$']] } };
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" defer></script>
-  </head>
-  <body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-          <img src="public/images/Logo_challenge.png" alt="Lab Logo" width="36" height="36" class="me-2" />
-          XLPSR Challenge
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="dataset.html">Dataset</a></li>
-            <li class="nav-item"><a class="nav-link" href="timeline.html">Timeline</a></li>
-            <li class="nav-item"><a class="nav-link" href="registration.html">Rules & Registration</a></li>
-            <li class="nav-item"><a class="nav-link" href="prizes.html">Prizes</a></li>
-            <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Extreme License Plate Super-Resolution (XLPSR) Challenge</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="public/style.css" />
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] } };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" defer></script>
+</head>
+
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="public/images/Logo_challenge.png" alt="Lab Logo" width="36" height="36" class="me-2" />
+        XLPSR Challenge
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="dataset.html">Dataset</a></li>
+          <li class="nav-item"><a class="nav-link" href="timeline.html">Timeline</a></li>
+          <li class="nav-item"><a class="nav-link" href="registration.html">Rules & Registration</a></li>
+          <li class="nav-item"><a class="nav-link" href="prizes.html">Prizes</a></li>
+          <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-5 hero text-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <!-- Updated Hero Text -->
+          <h1 class="fw-bold">The Extreme License Plate Super-Resolution (XLPSR) Challenge</h1>
+          <p class="lead mb-2">An Official Grand Challenge at <a href="https://2026.ieeeicip.org/" target="_blank"
+              class="text-white">IEEE ICIP 2026</a></p>
+          <p class="mb-0">Tampere, Finland • 13–17 September 2026</p>
+          <p class="mt-2"><strong>Benchmarking super-resolution under extreme real-world degradations.</strong></p>
+          <!-- End of Updated Hero Text -->
+        </div>
+        <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+          <img src="public/images/ICIP_logo.png" alt="ICIP Logo" class="img-fluid" style="max-height:96px" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- New "Challenge at a Glance" Section -->
+  <section class="py-3 bg-white border-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="fw-bold">📋 The Task</h5>
+          <ul class="mb-0">
+            <li><strong>Magnification:</strong> 8× to 16× Super-Resolution</li>
+            <li><strong>Input:</strong> Degraded real-world video frames</li>
+            <li><strong>Key Constraint:</strong> Hallucination-free, OCR-recoverable output</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h5 class="fw-bold">🚀 Get Involved</h5>
+          <ul class="mb-0">
+            <li><strong>Conference:</strong> Part of <a href="https://2026.ieeeicip.org/" target="_blank">IEEE ICIP
+                2026</a></li>
+            <li><strong>Status:</strong> Details forthcoming</li>
+            <li><strong>Next Step:</strong> Check the <a href="timeline.html">Timeline</a> & <a
+                href="registration.html">Rules</a> pages</li>
           </ul>
         </div>
       </div>
-    </nav>
+    </div>
+  </section>
+  <!-- End of New Section -->
 
-    <section class="py-5 hero text-white">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-8">
-            <!-- Updated Hero Text -->
-            <h1 class="fw-bold">The Extreme License Plate Super-Resolution (XLPSR) Challenge</h1>
-            <p class="lead mb-2">An Official Grand Challenge at <a href="https://2026.ieeeicip.org/" target="_blank" class="text-white">IEEE ICIP 2026</a></p>
-            <p class="mb-0">Tampere, Finland • 13–17 September 2026</p>
-            <p class="mt-2"><strong>Benchmarking super-resolution under extreme real-world degradations.</strong></p>
-            <!-- End of Updated Hero Text -->
-          </div>
-          <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
-            <img src="public/images/ICIP_logo.png" alt="ICIP Logo" class="img-fluid" style="max-height:96px" />
-          </div>
+  <main class="container my-4">
+
+   <section class="overview">
+    <h2 class="h4">Overview</h2>
+    <div class="row align-items-start">
+        <div class="col-lg-8">
+            <p>
+                The Extreme In-The-Wild License Plate Super-Resolution (XLPSR) Challenge establishes a benchmark for reconstructing readable <strong>French license plates</strong> from low-resolution, degraded video frames. Participants must develop super-resolution models capable of 8× to 16× magnification that address authentic degradations like motion blur, compression artifacts, and noise, specific to real-world acquisition scenarios.
+            </p>
+            <p>
+                The core requirement is the accurate, <strong>hallucination-free</strong> recovery of the alphanumeric characters and the standardized format of French plates, ensuring outputs are reliable for downstream Optical Character Recognition (OCR). Solutions may process frames independently or exploit temporal coherence in video. The use of auxiliary modules for denoising, deblurring, or dehazing is permitted within the model pipeline.
+            </p>
         </div>
-      </div>
+        <div class="col-lg-4 text-center">
+            <!-- Replace 'public/images/french_plate_example.png' with your actual image path -->
+            <img src="public/images/Logo_challenge.png" 
+                 alt="Example of a standard French license plate (AA-123-AA format)" 
+                 class="img-fluid rounded border mt-2 mt-lg-0" 
+                 style="max-height: 180px;">
+            <p class="text-muted small mt-2"><em>Example of the current French license plate format (AA-123-AA).</em></p>
+        </div>
+        </div>
     </section>
 
-    <!-- New "Challenge at a Glance" Section -->
-    <section class="py-3 bg-white border-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <h5 class="fw-bold">📋 The Task</h5>
-            <ul class="mb-0">
-              <li><strong>Magnification:</strong> 8× to 16× Super-Resolution</li>
-              <li><strong>Input:</strong> Degraded real-world video frames</li>
-              <li><strong>Key Constraint:</strong> Hallucination-free, OCR-recoverable output</li>
-            </ul>
-          </div>
-          <div class="col-md-6">
-            <h5 class="fw-bold">🚀 Get Involved</h5>
-            <ul class="mb-0">
-              <li><strong>Conference:</strong> Part of <a href="https://2026.ieeeicip.org/" target="_blank">IEEE ICIP 2026</a></li>
-              <li><strong>Status:</strong> Details forthcoming</li>
-              <li><strong>Next Step:</strong> Check the <a href="timeline.html">Timeline</a> & <a href="registration.html">Rules</a> pages</li>
-            </ul>
-          </div>
-        </div>
+    <section class="significance">
+      <h2 class="h4">Significance</h2>
+      <p><strong>Pushing SR into extreme regimes:</strong> Unlike common SR challenges (NTIRE, AIM), XLPSR addresses
+        8×–16× magnification under severe real-world degradations, motivating attention, diffusion-based SR, and
+        degradation-aware pipelines.</p>
+      <p><strong>High-impact application:</strong> Readable plates are critical for ITS, security, and forensics. The
+        primary automated metric prioritizes functional correctness over purely perceptual quality.</p>
+      <p><strong>Hallucination-free generation:</strong> OCR-based evaluation encourages fidelity and avoids plausible
+        but incorrect characters, aligning with reliability in generative models.</p>
+    </section>
+
+    <!-- New "Important Dates & Call to Action" Section -->
+    <section class="call-to-action my-5">
+      <h2 class="h4">Participate in the Challenge</h2>
+      <p>The XLPSR Challenge is now in its planning phase as part of IEEE ICIP 2026. We are finalizing the dataset,
+        evaluation server, and precise schedule with the conference organizers.</p>
+
+      <div class="alert alert-info" role="alert">
+        <h5 class="alert-heading">⏳ Awaiting Official Schedule</h5>
+        <p class="mb-0">The final timeline will be announced here and on the <a href="https://2026.ieeeicip.org/"
+            target="_blank">IEEE ICIP 2026 website</a> once confirmed by the Grand Challenge chairs. Key milestones will
+          include data release, submission deadlines, and result announcements.</p>
       </div>
+
+      <p><strong>How to prepare:</strong></p>
+      <ol>
+        <li>Review the proposed <a href="dataset.html">dataset</a> and <a href="timeline.html">timeline</a> structure.
+        </li>
+        <li>Familiarize yourself with the <a href="registration.html">rules & evaluation protocol</a>.</li>
+        <li>Check back regularly for the official announcement and start of registration.</li>
+      </ol>
     </section>
     <!-- End of New Section -->
 
-    <main class="container my-4">
-     
-      <section class="overview">
-        <h2 class="h4">Overview</h2>
-        <p>
-          The Extreme In-The-Wild License Plate Super-Resolution (XLPSR) Challenge benchmarks
-          reconstructing readable license plates from degraded video frames. Participants design a model
-          \(\hat{\mathbf{I}}_{HR} = \mathcal{G}(\mathbf{I}_{LR})\) with magnification factors ranging from 8× to 16×.
-          The focus is on <strong>real-world video frames</strong> with motion blur, compression artifacts, noise,
-          and viewpoint variability. Models must recover character-level details <em>without hallucination</em>, ensuring reliability
-          for downstream license plate recognition.
-        </p>
-        <p>
-          Frames may be processed independently or by exploiting temporal information across consecutive frames.
-          Enhancement modules (denoising, deblurring, dehazing) are allowed.
-        </p>
-      </section>
+    <section class="overview">
+      <h2 class="h4">Evaluation Protocol</h2>
+      <p><strong>Stage 1 — Automated Screening:</strong> An external OCR engine (fixed and disclosed) computes Character
+        Error Rate (CER) as normalized Levenshtein distance; a Visual Quality Metric (VQM) such as BRISQUE/NIQE/MUSIQ is
+        also computed. Combined score:</p>
+      <pre class="mb-2">S = α · CER + β · VQM</pre>
+      <p>The top submissions advance to Stage 2.</p>
+      <p><strong>Stage 2 — Expert Evaluation:</strong> A panel evaluates visual realism, plausibility, conformity to
+        official plate structure, geometry preservation, absence of hallucinations/artifacts, and overall fidelity.
+        <strong>Winners are selected solely via expert evaluation.</strong></p>
+    </section>
+  </main>
 
-      <section class="significance">
-        <h2 class="h4">Significance</h2>
-        <p><strong>Pushing SR into extreme regimes:</strong> Unlike common SR challenges (NTIRE, AIM), XLPSR addresses 8×–16× magnification under severe real-world degradations, motivating attention, diffusion-based SR, and degradation-aware pipelines.</p>
-        <p><strong>High-impact application:</strong> Readable plates are critical for ITS, security, and forensics. The primary automated metric prioritizes functional correctness over purely perceptual quality.</p>
-        <p><strong>Hallucination-free generation:</strong> OCR-based evaluation encourages fidelity and avoids plausible but incorrect characters, aligning with reliability in generative models.</p>
-      </section>
-
-      <!-- New "Important Dates & Call to Action" Section -->
-      <section class="call-to-action my-5">
-        <h2 class="h4">Participate in the Challenge</h2>
-        <p>The XLPSR Challenge is now in its planning phase as part of IEEE ICIP 2026. We are finalizing the dataset, evaluation server, and precise schedule with the conference organizers.</p>
-
-        <div class="alert alert-info" role="alert">
-          <h5 class="alert-heading">⏳ Awaiting Official Schedule</h5>
-          <p class="mb-0">The final timeline will be announced here and on the <a href="https://2026.ieeeicip.org/" target="_blank">IEEE ICIP 2026 website</a> once confirmed by the Grand Challenge chairs. Key milestones will include data release, submission deadlines, and result announcements.</p>
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4 mb-3 mb-md-0">
+          <h5 class="mb-1"><span class="text-white">ANR-IMPROVED</span> <span class="text-info"></span></h5>
+          <p class="mb-1">Interpolation et aMélioration des images et vidéos comPRressées pOur la preuVE juriDique »</p>
+          <small>ANR-22-CE39-0006</small>
         </div>
-
-        <p><strong>How to prepare:</strong></p>
-        <ol>
-          <li>Review the proposed <a href="dataset.html">dataset</a> and <a href="timeline.html">timeline</a> structure.</li>
-          <li>Familiarize yourself with the <a href="registration.html">rules & evaluation protocol</a>.</li>
-          <li>Check back regularly for the official announcement and start of registration.</li>
-        </ol>
-      </section>
-      <!-- End of New Section -->
-
-      <section class="overview">
-        <h2 class="h4">Evaluation Protocol</h2>
-        <p><strong>Stage 1 — Automated Screening:</strong> An external OCR engine (fixed and disclosed) computes Character Error Rate (CER) as normalized Levenshtein distance; a Visual Quality Metric (VQM) such as BRISQUE/NIQE/MUSIQ is also computed. Combined score:</p>
-        <pre class="mb-2">S = α · CER + β · VQM</pre>
-        <p>The top submissions advance to Stage 2.</p>
-        <p><strong>Stage 2 — Expert Evaluation:</strong> A panel evaluates visual realism, plausibility, conformity to official plate structure, geometry preservation, absence of hallucinations/artifacts, and overall fidelity. <strong>Winners are selected solely via expert evaluation.</strong></p>
-      </section>
-    </main>
-
-    <footer class="bg-dark text-white py-4 mt-5">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-4 mb-3 mb-md-0">
-            <h5 class="mb-1"><span class="text-white">ANR-IMPROVED</span> <span class="text-info"></span></h5>
-            <p class="mb-1">Interpolation et aMélioration des images et vidéos comPRressées pOur la preuVE juriDique »</p>
-            <small>ANR-22-CE39-0006</small>
-          </div>
-          <div class="col-md-4 text-center mb-3 mb-md-0">
-            <img src="public/images/new_logo.png" alt="Partner Logos" class="img-fluid" />
-          </div>
-          <div class="col-md-4 text-md-end">
-            <small>&copy; XLPSR Challenge</small>
-          </div>
+        <div class="col-md-4 text-center mb-3 mb-md-0">
+          <img src="public/images/new_logo.png" alt="Partner Logos" class="img-fluid" />
+        </div>
+        <div class="col-md-4 text-md-end">
+          <small>&copy; XLPSR Challenge</small>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
