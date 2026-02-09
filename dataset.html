@@ -3,14 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The Extreme License Plate Super-Resolution (XLPSR) Challenge</title>
+    <title>Dataset - XLPSR Challenge</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="public/style.css" />
+    <link rel="stylesheet" href="public/dataset.css" />
     <script>
       window.MathJax = { tex: { inlineMath: [['\\(','\\)'], ['$', '$']] } };
     </script>
@@ -29,7 +31,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="dataset.html">Dataset</a></li>
+            <li class="nav-item"><a class="nav-link active" href="dataset.html">Dataset</a></li>
             <li class="nav-item"><a class="nav-link" href="timeline.html">Timeline</a></li>
             <li class="nav-item"><a class="nav-link" href="registration.html">Rules & Registration</a></li>
             <li class="nav-item"><a class="nav-link" href="prizes.html">Prizes</a></li>
@@ -44,9 +46,10 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-8">
-            <h2 class="fw-bold">The Extreme License Plate Super-Resolution (XLPSR) Challenge</h2>
-            <p class="lead mb-2">IEEE ICIP 2026 — Tampere, Finland</p>
-            <p class="mb-0">Benchmarking SR under severe, real-world degradations.</p>
+            <h1 class="fw-bold">Dataset</h1>
+            <p class="lead mb-2">The IMPROVED Dataset for Extreme Super-Resolution</p>
+            <p class="mb-0">An Official Grand Challenge at <a href="https://2026.ieeeicip.org/" target="_blank" class="text-white">IEEE ICIP 2026</a></p>
+            <p class="mt-2">Tampere, Finland • 13–17 September 2026</p>
           </div>
           <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
             <img src="public/images/ICIP_logo.png" alt="ICIP Logo" class="img-fluid" style="max-height:96px" />
@@ -55,43 +58,176 @@
       </div>
     </section>
 
-    <main class="container my-4">
-        <section class="dataset">
-            <h2 class="h4">The IMPROVED Dataset</h2>
+    <main class="container my-5">
+      <section class="dataset-section">
+        <h2 class="h3 section-title">The IMPROVED Dataset</h2>
+        
+        <div class="alert alert-primary" role="alert">
+          <h5 class="alert-heading d-flex align-items-center"><i class="fas fa-database me-2"></i> Dataset Focus</h5>
+          <p class="mb-0">The XLPSR challenge evaluates <strong>text reconstruction accuracy</strong> rather than pixel-level fidelity. No high-resolution clean frames are provided—models must recover license plate text directly from degraded low-resolution inputs.</p>
+        </div>
 
-            <p>
-                The XLPSR challenge is built upon the proprietary <strong>IMPROVED</strong> dataset
-                (In-the-wild with multi-perspective realistic observations for vehicle evidence and license plate recognition),
-                curated to capture the diversity and complexity of real operational environments.
-            </p>
+        <p>
+          The challenge is built upon the proprietary <strong>IMPROVED</strong> dataset
+          (In-the-wild with Multi-Perspective Realistic Observations for Vehicle Evidence and license-plate recognition),
+          specifically curated to capture the diversity and complexity of real operational environments.
+        </p>
 
-            <h2 class="h5">Dataset Overview</h2>
-            <ul class="list-unstyled mx-auto" style="max-width:800px; text-align:left">
-                <li>Short real-world video clips (up to 10s) of moving vehicles with French license plates.</li>
-                <li>Multiple acquisition devices (consumer cameras, surveillance cameras, smartphones).</li>
-                <li>Wide range of distances (10–100 meters) and lighting (day, night, transitional).</li>
-                <li>Weather variation (clear, cloudy) and large viewpoint variability (frontal, oblique, steep angle).</li>
-                <li>Strong natural degradations (motion blur, sensor noise, compression).</li>
-            </ul>
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <div class="info-card">
+              <h5 class="d-flex align-items-center"><i class="fas fa-video me-2"></i> Dataset Characteristics</h5>
+              <ul class="dataset-features">
+                <li>Short real-world video clips (up to 10s) of moving vehicles with <strong>French license plates</strong></li>
+                <li>Multiple acquisition devices (consumer cameras, surveillance cameras, smartphones)</li>
+                <li>Wide range of distances (10–100 meters)</li>
+                <li>Variable lighting conditions (day, night, transitional)</li>
+                <li>Weather variation (clear, cloudy)</li>
+                <li>Large viewpoint variability (frontal, oblique, steep angle)</li>
+                <li>Strong natural degradations (motion blur, sensor noise, compression artifacts)</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="info-card">
+              <h5 class="d-flex align-items-center"><i class="fas fa-file-alt me-2"></i> Data Format</h5>
+              <p>Each video clip is paired with:</p>
+              <ul class="dataset-features">
+                <li>Low-resolution input frames <code>\mathbf{I}_{LR}</code> extracted from the video</li>
+                <li>Ground-truth license plate text (character string)</li>
+                <li>Frame-level metadata (timestamp, camera parameters when available)</li>
+                <li>Degradation profiles for selected sequences</li>
+              </ul>
+              <p class="mt-2"><small><em>Note: High-resolution reference images are <strong>not provided</strong> to emphasize the real-world super-resolution task.</em></small></p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <p>Each video is paired with:</p>
-            <ul class="list-unstyled mx-auto" style="max-width:800px; text-align:left">
-                <li>Low-resolution input frames <code>\mathbf{I}_{LR}</code> extracted from the video.</li>
-                <li>Ground-truth license plate text (character string).</li>
-            </ul>
+      <section class="dataset-section">
+        <h2 class="h3 section-title">Dataset Splits</h2>
+        <p class="mb-4">The IMPROVED dataset is divided into three distinct sets to ensure fair evaluation and rigorous benchmarking:</p>
+        
+        <div class="row g-4">
+          <!-- Development Set -->
+          <div class="col-lg-4">
+            <div class="dataset-card development-set">
+              <div class="dataset-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <h4>Development Set</h4>
+              <p class="dataset-subtitle">For Local Benchmarking & Validation</p>
+              <div class="dataset-content">
+                <p><strong>Available to registered participants immediately after registration approval.</strong></p>
+                <ul>
+                  <li>Complete low-resolution video frames</li>
+                  <li>Full ground-truth license plate labels</li>
+                  <li>Degradation metadata</li>
+                  <li>Evaluation scripts for local validation</li>
+                </ul>
+                <p class="mb-0"><strong>Purpose:</strong> Allows participants to develop, test, and validate their models locally before submission.</p>
+              </div>
+              <div class="dataset-footer">
+                <span class="badge bg-success">Available Now</span>
+                <span class="badge bg-info">With Labels</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Public Validation Set -->
+          <div class="col-lg-4">
+            <div class="dataset-card validation-set">
+              <div class="dataset-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h4>Public Validation Set</h4>
+              <p class="dataset-subtitle">For Public Leaderboard</p>
+              <div class="dataset-content">
+                <p><strong>Used for the public leaderboard during the challenge period.</strong></p>
+                <ul>
+                  <li>Low-resolution frames only (no ground truth)</li>
+                  <li>Submit SR outputs for automated evaluation</li>
+                  <li>Real-time leaderboard ranking</li>
+                  <li>Limited submissions per day</li>
+                </ul>
+                <p class="mb-0"><strong>Purpose:</strong> Enables participants to benchmark against others and track progress on the public leaderboard.</p>
+              </div>
+              <div class="dataset-footer">
+                <span class="badge bg-warning">Timeline Release</span>
+                <span class="badge bg-secondary">No Labels</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Blind Test Set -->
+          <div class="col-lg-4">
+            <div class="dataset-card test-set">
+              <div class="dataset-icon">
+                <i class="fas fa-eye-slash"></i>
+              </div>
+              <h4>Blind Test Set</h4>
+              <p class="dataset-subtitle">For Final Evaluation</p>
+              <div class="dataset-content">
+                <p><strong>Used exclusively by organizers for final ranking.</strong></p>
+                <ul>
+                  <li>Completely unseen data</li>
+                  <li>No ground truth released to participants</li>
+                  <li>Similar diversity to development set</li>
+                  <li>Evaluated on organizers' servers</li>
+                </ul>
+                <p class="mb-0"><strong>Purpose:</strong> Ensures fair, unbiased final evaluation of all submissions on previously unseen data.</p>
+              </div>
+              <div class="dataset-footer">
+                <span class="badge bg-danger">Organizers Only</span>
+                <span class="badge bg-dark">Blind Evaluation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <p>No high-resolution clean frame is provided. The challenge evaluates <strong>text reconstruction accuracy</strong> rather than pixel-level fidelity.</p>
-
-            <!-- Object category list removed (from previous dataset). -->
-            <h2 class="h5">Data Split and Training Policy</h2>
-            <ul class="list-unstyled mx-auto" style="max-width:800px; text-align:left">
-                <li><strong>Training policy:</strong> Participants may use any external data (synthetic/public/proprietary). Only official test sets are restricted.</li>
-                <li><strong>Public validation set:</strong> Representative subset with LR frames and ground-truth text for local validation and public leaderboard.</li>
-                <li><strong>Private blind test set:</strong> Unseen videos with similar diversity; organizers run submissions to generate final CER scores.</li>
-            </ul>
-
-            <!-- Optional illustrative figure can be added here when available -->
-        </section>
+      <section class="dataset-section">
+        <h2 class="h3 section-title">Training Policy & Guidelines</h2>
+        
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="info-card">
+              <h5 class="d-flex align-items-center"><i class="fas fa-graduation-cap me-2"></i> Training Guidelines</h5>
+              <ul class="dataset-features">
+                <li><strong>External data permitted:</strong> Participants may use any external data (synthetic, public, or proprietary) for training their models.</li>
+                <li><strong>Model constraints:</strong> No restrictions on model architecture, size, or training methodology.</li>
+                <li><strong>Pre-trained models:</strong> Use of publicly available pre-trained models is allowed and encouraged.</li>
+                <li><strong>Data augmentation:</strong> Participants may augment the provided data with synthetic degradations.</li>
+                <li><strong>Submission requirements:</strong> Final models must be submitted as Docker containers for reproducibility.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-lg-4">
+            <div class="info-card">
+              <h5 class="d-flex align-items-center"><i class="fas fa-exclamation-triangle me-2"></i> Important Notes</h5>
+              <ul class="dataset-features">
+                <li>The blind test set will <strong>not</strong> be released to participants at any time</li>
+                <li>Public leaderboard rankings are indicative only</li>
+                <li>Final ranking is based exclusively on blind test set performance</li>
+                <li>All submissions will be reviewed for compliance with rules</li>
+                <li>Dataset license agreement must be signed during registration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="alert alert-info mt-4" role="alert">
+          <h5 class="alert-heading d-flex align-items-center"><i class="fas fa-clock me-2"></i> Dataset Release Schedule</h5>
+          <p class="mb-0">The development set will be released immediately upon registration approval. The public validation set will become available according to the challenge timeline. The blind test set remains exclusively with the organizers for final evaluation.</p>
+        </div>
+      </section>
+      
+      <div class="text-center mt-5">
+        <a href="registration.html" class="btn btn-primary btn-lg me-3"><i class="fas fa-user-plus me-2"></i> Register to Access Dataset</a>
+        <a href="timeline.html" class="btn btn-outline-primary btn-lg"><i class="fas fa-calendar-alt me-2"></i> View Release Timeline</a>
+      </div>
     </main>
 
     <footer class="bg-dark text-white py-4 mt-5">
@@ -106,7 +242,7 @@
             <img src="public/images/logo_part.png" alt="Partner Logos" class="img-fluid" />
           </div>
           <div class="col-md-4 text-md-end">
-            <small>&copy; XLPSR Challenge</small>
+            <small>&copy; XLPSR Challenge • IEEE ICIP 2026 • Tampere, Finland</small>
           </div>
         </div>
       </div>
