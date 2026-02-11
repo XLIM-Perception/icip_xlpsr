@@ -78,11 +78,11 @@
             <div class="info-card">
               <h5 class="d-flex align-items-center"><i class="fas fa-video me-2"></i> Dataset Characteristics</h5>
               <ul class="dataset-features">
-                <li>Short real-world video clips (up to 5s) of moving vehicles with <strong>French license plates</strong></li>
+                <li>Short real-world video clips (up to 10 frames) of moving vehicles with <strong>French license plates</strong></li>
                 <li>Multiple acquisition devices (consumer cameras, surveillance cameras, smartphones)</li>
                 <li>Wide range of distances (10–100 meters)</li>
                 <li>Variable lighting conditions</li>
-                <li>Weather variation (clear, cloudy)</li>
+                <li>Different weather conditions (clear, cloudy)</li>
                 <li>Large viewpoint variability (frontal, oblique, steep angle)</li>
                 <li>Strong natural degradations (motion blur, sensor noise, compression artifacts)</li>
               </ul>
@@ -94,10 +94,9 @@
               <h5 class="d-flex align-items-center"><i class="fas fa-file-alt me-2"></i> Data Format</h5>
               <p>Each video clip is paired with:</p>
               <ul class="dataset-features">
-                <li>Low-resolution input frames <code>\mathbf{I}_{LR}</code> extracted from the video</li>
-                <li>Ground-truth license plate text (character string)</li>
-                <li>Frame-level metadata (timestamp, camera parameters when available)</li>
-                <li>Degradation profiles for selected sequences</li>
+                <li>Low-resolution input frames extracted from the video</li>
+                <li>Ground-truth license plate text (character string) avalaible only for the developement set.</li>
+                <li>Frame-level metadata (Video clip ID and license plate bounding boxes)</li>
               </ul>
               <p class="mt-2"><small><em>Note: High-resolution reference images are <strong>not provided</strong> to emphasize the real-world super-resolution task.</em></small></p>
             </div>
@@ -107,7 +106,7 @@
 
       <!-- NEW SECTION: Acquisition Setup -->
       <section class="dataset-section">
-        <h2 class="h3 section-title">Acquisition Setup</h2>
+        <h2 class="h3 section-title">Acquisition Site</h2>
         
         <div class="row">
           <div class="col-lg-6">
