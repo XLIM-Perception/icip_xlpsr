@@ -12,7 +12,6 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="public/style.css" />
-    <!-- Add this link to your new timeline-specific CSS -->
     <link rel="stylesheet" href="public/timeline.css" />
     <script>
       window.MathJax = { tex: { inlineMath: [['\\(','\\)'], ['$', '$']] } };
@@ -47,10 +46,10 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-8">
-            <h1 class="fw-bold">The Extreme License Plate Super-Resolution (XLPSR) Challenge</h1>
-            <p class="lead mb-2">An Official Grand Challenge at <a href="https://2026.ieeeicip.org/" target="_blank" class="text-white">IEEE ICIP 2026</a></p>
-            <p class="mb-0">Tampere, Finland • 13–17 September 2026</p>
-            <p class="mt-2"><strong>Benchmarking super-resolution under extreme real-world degradations.</strong></p>
+            <h1 class="fw-bold">Challenge Timeline</h1>
+            <p class="lead mb-2">Key dates and milestones for the XLPSR Challenge at IEEE ICIP 2026</p>
+            <p class="mb-0">An Official Grand Challenge at <a href="https://2026.ieeeicip.org/" target="_blank" class="text-white">IEEE ICIP 2026</a></p>
+            <p class="mt-2">Tampere, Finland • 13–17 September 2026</p>
           </div>
           <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
             <img src="public/images/ICIP_logo.png" alt="ICIP Logo" class="img-fluid" style="max-height:96px" />
@@ -85,69 +84,84 @@
           </div>
         </div>
         
-        <!-- Phase 2: Validation Release -->
+        <!-- NEW: Phase 2: Development Set Release -->
         <div class="timeline-item">
           <div class="timeline-content">
             <div class="timeline-date">
-              <i class="fas fa-database"></i> March 01, 2026
+              <i class="fas fa-code"></i> ~ Feb 20, 2026
+              <span class="badge bg-success badge-phase">Dataset Release</span>
             </div>
-            <h4 class="timeline-milestone">IMPROVED Public Validation Set Release</h4>
-            <p class="timeline-desc">The validation dataset becomes available to registered participants through CodaBench. This set is used for development and preliminary testing of solutions.</p>
+            <h4 class="timeline-milestone">Development Set Release</h4>
+            <p class="timeline-desc">The <strong>Development Set</strong> with full ground truth labels becomes available to approved registrants. This set includes complete low-resolution video frames and license plate annotations for local model development and validation.</p>
           </div>
         </div>
         
-        <!-- Phase 3: Submission Deadline -->
+        <!-- UPDATED: Phase 3: Public Validation Set Release -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">
+              <i class="fas fa-chart-line"></i> March 01, 2026
+              <span class="badge bg-warning badge-phase">Public Leaderboard</span>
+            </div>
+            <h4 class="timeline-milestone">Public Validation Set Release</h4>
+            <p class="timeline-desc">The <strong>Public Validation Set</strong> (without ground truth) is released and shared with registred participants. Participants can submit their super-resolution outputs for automated evaluation and public leaderboard ranking. This set is used for benchmarking against other participants.</p>
+          </div>
+        </div>
+        
+        <!-- Phase 4: Submission Deadline -->
         <div class="timeline-item">
           <div class="timeline-content">
             <div class="timeline-date">
               <i class="fas fa-paper-plane"></i> May 13, 2026
+              <span class="badge bg-danger badge-phase">Final Deadline</span>
             </div>
             <h4 class="timeline-milestone">Final Submission Deadline</h4>
-            <p class="timeline-desc">Deadline for submitting final solutions and the mandatory two-page extended abstract describing the approach. All submissions must be made through the CodaBench platform.</p>
+            <p class="timeline-desc">Deadline for submitting final solutions and the mandatory two-page extended abstract describing the approach. All submissions must include both super-resolution outputs and the extended abstract through the CodaBench platform.</p>
           </div>
         </div>
         
-        <!-- Phase 4: Evaluation Period -->
+        <!-- Phase 5: Evaluation Period -->
         <div class="timeline-item">
           <div class="timeline-content">
             <div class="timeline-date">
               <i class="fas fa-clipboard-check"></i> May 14 – May 31, 2026
             </div>
             <h4 class="timeline-milestone">Internal Evaluation Period</h4>
-            <p class="timeline-desc">The organizing team evaluates all submissions using the automated screening protocol (OCR + VQM metrics) followed by expert panel assessment.</p>
+            <p class="timeline-desc">The organizing team evaluates all submissions on the blind test set using the automated scoring protocol (Character Error Rate with custom scoring rules) followed by expert panel assessment for final winner selection.</p>
           </div>
         </div>
         
-        <!-- Phase 5: Acceptance Notification -->
+        <!-- Phase 6: Acceptance Notification -->
         <div class="timeline-item">
           <div class="timeline-content">
             <div class="timeline-date">
               <i class="fas fa-envelope"></i> June 10, 2026
             </div>
             <h4 class="timeline-milestone">Extended Abstract Acceptance Notification</h4>
-            <p class="timeline-desc">Authors are notified about the acceptance of their two-page extended abstracts for inclusion in the ICIP 2026 Grand Challenge proceedings.</p>
+            <p class="timeline-desc">Authors are notified about the acceptance of their two-page extended abstracts for inclusion in the ICIP 2026 Grand Challenge proceedings. Feedback may be provided for camera-ready version preparation.</p>
           </div>
         </div>
         
-        <!-- Phase 6: Camera-ready Submission -->
+        <!-- Phase 7: Camera-ready Submission -->
         <div class="timeline-item">
           <div class="timeline-content">
             <div class="timeline-date">
               <i class="fas fa-edit"></i> July 1, 2026
             </div>
             <h4 class="timeline-milestone">Camera-ready Abstract Submission</h4>
-            <p class="timeline-desc">Deadline for submitting the final camera-ready version of the two-page extended abstract, incorporating any requested changes from reviewers.</p>
+            <p class="timeline-desc">Deadline for submitting the final camera-ready version of the two-page extended abstract, incorporating any requested changes from reviewers and following IEEE ICIP 2026 formatting guidelines.</p>
           </div>
         </div>
         
-        <!-- Phase 7: Conference & Winners -->
+        <!-- Phase 8: Conference & Winners -->
         <div class="timeline-item">
           <div class="timeline-content">
             <div class="timeline-date">
               <i class="fas fa-trophy"></i> 13–17 September 2026
+              <span class="badge bg-info badge-phase">Conference</span>
             </div>
-            <h4 class="timeline-milestone">ICIP 2026 Conference & Winner Announcement</h4>
-            <p class="timeline-desc">Grand Challenge results and winners are announced during a special session at IEEE ICIP 2026 in Tampere, Finland. Winning teams will be recognized and invited to present their approaches.</p>
+            <h4 class="timeline-milestone">IEEE ICIP 2026 Conference & Winner Announcement</h4>
+            <p class="timeline-desc">Grand Challenge results and winners are announced during a special session at IEEE ICIP 2026 in Tampere, Finland. Winning teams will be recognized, invited to present their approaches, and receive awards.</p>
           </div>
         </div>
       </section>
@@ -160,29 +174,58 @@
             </div>
             <div class="card-body">
               <div class="row text-center">
-                <div class="col-md-4 mb-3">
+                <div class="col-md-3 mb-3">
                   <div class="p-3 bg-light rounded">
-                    <h3 class="text-primary">3+ Months</h3>
-                    <p class="mb-0">Development & Testing Period</p>
-                    <small class="text-muted">From validation release to final submission</small>
+                    <h3 class="text-primary">~10 Days</h3>
+                    <p class="mb-0">Registration Window</p>
+                    <small class="text-muted">From launch to development set release</small>
                   </div>
                 </div>
-                <div class="col-md-4 mb-3">
+                <div class="col-md-3 mb-3">
+                  <div class="p-3 bg-light rounded">
+                    <h3 class="text-primary">2.5 Months</h3>
+                    <p class="mb-0">Development Period</p>
+                    <small class="text-muted">From dev set to final submission</small>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
                   <div class="p-3 bg-light rounded">
                     <h3 class="text-primary">2.5 Weeks</h3>
                     <p class="mb-0">Evaluation Period</p>
-                    <small class="text-muted">Automated & expert assessment of submissions</small>
+                    <small class="text-muted">Automated & expert assessment</small>
                   </div>
                 </div>
-                <div class="col-md-4 mb-3">
+                <div class="col-md-3 mb-3">
                   <div class="p-3 bg-light rounded">
-                    <h3 class="text-primary">4 Months</h3>
-                    <p class="mb-0">Total Challenge Duration</p>
-                    <small class="text-muted">From launch to conference presentation</small>
+                    <h3 class="text-primary">7+ Months</h3>
+                    <p class="mb-0">Total Duration</p>
+                    <small class="text-muted">From launch to conference</small>
                   </div>
                 </div>
               </div>
+              
+              <div class="mt-4">
+                <h6 class="text-center mb-3"><i class="fas fa-database me-2"></i>Dataset Release Schedule</h6>
+                <div class="row text-center">
+                  <div class="col-md-6 mb-3">
+                    <div class="p-3 rounded" style="background-color: #e8f5e9; border-left: 4px solid #28a745;">
+                      <h5 class="text-success">Development Set</h5>
+                      <p class="mb-1"><strong>~ Feb 20, 2026</strong></p>
+                      <p class="mb-0 small">With ground truth for local validation</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="p-3 rounded" style="background-color: #fff3cd; border-left: 4px solid #ffc107;">
+                      <h5 class="text-warning">Public Validation Set</h5>
+                      <p class="mb-1"><strong>March 01, 2026</strong></p>
+                      <p class="mb-0 small">For public leaderboard ranking</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
               <div class="mt-3 text-center">
+                <a href="dataset.html" class="btn btn-outline-primary me-2"><i class="fas fa-database me-1"></i> Dataset Details</a>
                 <a href="registration.html" class="btn btn-primary me-2"><i class="fas fa-file-alt me-1"></i> View Rules</a>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPuWVRUzKbPN9pie-8c41VQHmQ1QU3Rh69UCZ-CxnXoIVkQQ/viewform" target="_blank" class="btn btn-success"><i class="fas fa-user-plus me-1"></i> Register Now</a>
               </div>
@@ -201,7 +244,7 @@
             <small>ANR-22-CE39-0006</small>
           </div>
           <div class="col-md-4 text-center mb-3 mb-md-0">
-            <img src="public/images/logo_part.png" alt="Partner Logos" class="img-fluid w-50" />
+            <img src="public/images/logo_part.png" alt="Partner Logos" class="img-fluid" style="max-width: 200px;" />
           </div>
           <div class="col-md-4 text-md-end">
             <small>&copy; XLPSR Challenge • IEEE ICIP 2026 • Tampere, Finland</small>

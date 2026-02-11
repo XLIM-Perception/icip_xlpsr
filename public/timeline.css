@@ -189,3 +189,33 @@
     color: var(--primary-color);
     margin-bottom: 0.5rem;
 }
+
+/* Add to timeline.css if desired */
+.badge-phase {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.timeline-content {
+    position: relative;
+}
+
+/* Color variations for different badge types */
+.bg-success.badge-phase {
+    background-color: #28a745 !important;
+}
+
+.bg-warning.badge-phase {
+    background-color: #ffc107 !important;
+    color: #212529;
+}
+
+.bg-danger.badge-phase {
+    background-color: #dc3545 !important;
+}
+
+.bg-info.badge-phase {
+    background-color: #17a2b8 !important;
+}
