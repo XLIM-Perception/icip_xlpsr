@@ -132,8 +132,30 @@
                 <li><strong>Specialized:</strong> Hikvision fisheye camera (severe distortion), infrared camera</li>
               </ul>
               <div class="alert alert-secondary mt-2 p-2">
-                <small><i class="fas fa-info-circle me-1"></i> Note: Fisheye (Camera 06) and infrared (Camera 05) sequences are included to represent challenging edge cases, though detection may be difficult.</small>
+                <small><i class="fas fa-info-circle me-1"></i> Note: Fisheye and infrared sequences are included to represent challenging edge cases, though detection may be difficult.</small>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW SECTION: License Plate Examples -->
+      <section class="dataset-section">
+        <h2 class="h3 section-title">License Plate Examples</h2>
+        
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="info-card">
+              <h5 class="d-flex align-items-center"><i class="fas fa-car me-2"></i> French License Plate Format</h5>
+              <p>The dataset exclusively contains <strong>French license plates</strong> following the standard format: <code>AA-123-AA</code> (2 letters, 3 digits, 2 letters).</p>
+              <div class="text-center my-4">
+                <img src="public/images/Grand_challenge_examples.png" 
+                    alt="Examples of French license plates in the dataset" 
+                    class="img-fluid rounded border shadow-sm" 
+                    style="max-height: 300px;">
+                <p class="text-muted small mt-2"><em>Figure 2: Examples of French license plates from the acquisition.</em></p>
+              </div>
+              
             </div>
           </div>
         </div>
@@ -142,75 +164,32 @@
       <!-- NEW SECTION: Dataset Composition -->
       <section class="dataset-section">
         <h2 class="h3 section-title">Dataset Composition</h2>
-        
         <div class="row">
-          <div class="col-md-6">
-            <div class="info-card">
-              <h5 class="d-flex align-items-center"><i class="fas fa-calculator me-2"></i> Statistics Overview</h5>
-              <ul class="dataset-features">
-                <li><strong>Total unique license plates:</strong> 70 distinct French plates</li>
-                <li><strong>Total sequences:</strong> 451 sequences (10 frames each) = 4,510 images</li>
-                <li><strong>Cameras:</strong> 17 different models</li>
-                <li><strong>Blind test set:</strong> 88 additional sequences (880 images) with 16 unseen plates</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="info-card">
-              <h5 class="d-flex align-items-center"><i class="fas fa-chart-pie me-2"></i> Data Split</h5>
-              <ul class="dataset-features">
-                <li><strong>Development Set:</strong> 46 sequences (460 images) with full annotations</li>
-                <li><strong>Public Validation Set:</strong> 405 sequences (4,050 images) for leaderboard</li>
-                <li><strong>Blind Test Set:</strong> 88 sequences (880 images) - 16 unseen plates</li>
-              </ul>
-              <p class="mt-2 mb-0"><small>Split ratio: ~10% development, 90% public validation from the annotated corpus, plus separate blind test set.</small></p>
+        <div class="col-12">
+          <div class="info-card">
+            <h5 class="d-flex align-items-center"><i class="fas fa-chart-bar me-2"></i> Dataset Statistics & Split</h5>
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="dataset-features mb-0">
+                  <li><strong>Total unique license plates:</strong> 70 distinct French plates</li>
+                  <li><strong>Total sequences:</strong> 451 sequences (10 frames each) = 4,510 images</li>
+                  <li><strong>Cameras:</strong> 17 different models</li>
+                  <li><strong>Blind test plates:</strong> 16 unseen plates</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="dataset-features mb-0">
+                  <li><strong>Development Set:</strong> 46 sequences (460 images) with full annotations</li>
+                  <li><strong>Public Validation Set:</strong> 405 sequences (4,050 images) for leaderboard</li>
+                  <li><strong>Blind Test Set:</strong> 88 sequences (880 images) - held-out</li>
+                </ul>
+                <p class="mt-2 mb-0"><small>Split ratio: ~10% development, 90% public validation from the annotated corpus. Blind test set contains completely unseen plates.</small></p>
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Camera Distribution Table -->
-        <div class="mt-4">
-          <h5 class="mb-3"><i class="fas fa-table me-2"></i> Image Distribution per Camera</h5>
-          <div class="table-responsive">
-            <table class="table table-sm table-bordered table-hover">
-              <thead class="table-light">
-                <tr>
-                  <th>Camera ID</th>
-                  <th>Camera Model</th>
-                  <th class="text-center">Number of Images</th>
-                  <th>Notes</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>Camera_01</td><td>Reolink Duo series P730</td><td class="text-center">30</td><td><small>Surveillance</small></td></tr>
-                <tr><td>Camera_02</td><td>Instar IN-9420 2K+</td><td class="text-center">10</td><td><small>Surveillance</small></td></tr>
-                <tr><td>Camera_03</td><td>Reolink Duo series P730</td><td class="text-center">6</td><td><small>Surveillance</small></td></tr>
-                <tr><td>Camera_04</td><td>Instar IN-9420 2K+</td><td class="text-center">15</td><td><small>Surveillance</small></td></tr>
-                <tr><td>Camera_05</td><td>Hikvision DS-2CD2025FWD-1</td><td class="text-center">1</td><td><small>Infrared - challenging</small></td></tr>
-                <tr><td>Camera_06</td><td>Hikvision DS-2CD2942F-IS</td><td class="text-center">0</td><td><small>Fisheye - no detections</small></td></tr>
-                <tr><td>Camera_07</td><td>Hikvision DS-2CD4A85F-IZ</td><td class="text-center">16</td><td><small>Surveillance</small></td></tr>
-                <tr><td>Camera_08</td><td>Blackmagic micro studio 4K</td><td class="text-center">18</td><td><small>Ground level</small></td></tr>
-                <tr><td>Camera_09</td><td>Blackmagic micro studio 4K</td><td class="text-center">47</td><td><small>Elevated position</small></td></tr>
-                <tr><td>Camera_10</td><td>Huawei P40 Pro</td><td class="text-center">54</td><td><small>Smartphone</small></td></tr>
-                <tr><td>Camera_11</td><td>iPhone 15 Plus</td><td class="text-center">130</td><td><small>Smartphone</small></td></tr>
-                <tr><td>Camera_12</td><td>Xiaomi Redmi Note 13</td><td class="text-center">36</td><td><small>Smartphone</small></td></tr>
-                <tr><td>Camera_13</td><td>Huawei Honor 9X (STK-LX1)</td><td class="text-center">8</td><td><small>Smartphone</small></td></tr>
-                <tr><td>Camera_14</td><td>iPhone 15 (A3092)</td><td class="text-center">11</td><td><small>Smartphone</small></td></tr>
-                <tr><td>Camera_15</td><td>Dahua IPC-HDW2230T-AS-S2</td><td class="text-center">1</td><td><small>Low quality</small></td></tr>
-                <tr><td>Camera_16</td><td>Dahua DH-IP-H</td><td class="text-center">45</td><td><small>Surveillance</small></td></tr>
-                <tr><td>Camera_17</td><td>Panasonic Lumix DMC-G70</td><td class="text-center">23</td><td><small>Professional</small></td></tr>
-              </tbody>
-              <tfoot class="table-light">
-                <tr>
-                  <th colspan="2">Total</th>
-                  <th class="text-center">451</th>
-                  <th>sequences (4,510 images)</th>
-                </tr>
-              </tfoot>
-            </table>
-          </div>
-          <p class="text-muted small mt-2"><em>Note: Camera_06 (fisheye) and Camera_05 (infrared) represent extreme cases with limited/zero detections.</em></p>
-        </div>
       </section>
 
       <!-- NEW SECTION: File Format Specification -->
@@ -261,8 +240,8 @@ dataset/
         </div>
 
         <div class="alert alert-warning mt-3">
-          <h5 class="alert-heading d-flex align-items-center"><i class="fas fa-file-csv me-2"></i> Ground Truth Format</h5>
-          <p class="mb-0">The global <code>ground_truth.csv</code> file maps sequence IDs to license plate text:</p>
+          <h5 class="alert-heading d-flex align-items-center"><i class="fas fa-file-csv me-2"></i> Prediction file format</h5>
+          <p class="mb-0">The prediction <code>prediction.csv</code> should incllude the sequence IDs and the coresponding preidcted license plate text:</p>
           <pre class="bg-light p-2 mt-2 rounded border" style="font-size: 0.85rem; max-width: 400px;">
 sequence_id,license_plate
 seq_001,AB-123-CD
