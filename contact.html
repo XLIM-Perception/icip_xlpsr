@@ -307,9 +307,6 @@ IEEE ICIP 2026 • Tampere, Finland
         const mailtoLink = `mailto:${primaryContact}?&subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
         window.location.href = mailtoLink;
         
-        // Success message
-        alert('✅ Message prepared! Your email client will open.\n\n📎.\n📝 Please review and send the email.');
-        
         // Reset form
         contactForm.reset();
       } catch (error) {
