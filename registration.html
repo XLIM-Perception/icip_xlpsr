@@ -189,99 +189,117 @@
         </div>
       </section>
 
-      <section class="rules-section">
-        <h2 class="h3 section-title">Challenge Rules & Guidelines</h2>
-        
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="rules-card">
-              <h4 class="d-flex align-items-center"><i class="fas fa-trophy me-2"></i> Evaluation & Scoring</h4>
-              <ul class="rules-list">
-                <li><strong>Primary Metric:</strong> Character Error Rate (CER) with custom scoring rules</li>
-                <li><strong>Format Requirement:</strong> Predictions must match French license plate format: <code>AA-123-AA</code> (2 letters, 3 digits, 2 letters)</li>
-                <li><strong>Scoring System:</strong>
-                  <ul class="nested-list">
-                    <li>Correct character at correct position: <span class="badge bg-success">+2 points</span></li>
-                    <li>No prediction for character: <span class="badge bg-secondary">0 points</span></li>
-                    <li>Wrong character (hallucination): <span class="badge bg-danger">-1 point</span></li>
-                  </ul>
-                </li>
-                <li><strong>Maximum Score:</strong> 14 points (7 characters × 2 points)</li>
-                <li><strong>Minimum Score:</strong> -7 points (7 characters × -1 point)</li>
-              </ul>
-            </div>
-            
-            <div class="rules-card mt-4">
-              <h4 class="d-flex align-items-center"><i class="fas fa-code me-2"></i> Submission Requirements</h4>
-              <ul class="rules-list">
-                <li><strong>Final Submission:</strong> Must include both:
-                  <ul class="nested-list">
-                    <li>Super-resolution outputs for all test sequences</li>
-                    <li>2-page extended abstract in IEEE conference format</li>
-                  </ul>
-                </li>
-                <li><strong>Output Format:</strong> CSV file with columns: <code>sequence_id</code> and <code>predicted_lp</code></li>
-                <li><strong>Abstract Format:</strong> PDF following IEEE ICIP 2026 template guidelines</li>
-                <li><strong>Model Submission:</strong> Top-performing teams must submit reproducible Docker containers on invitation. See the Docker preparation and submission guidelines.</li>
-              </ul>
-            </div>
+     <section class="rules-section">
+      <h2 class="h3 section-title">Challenge Rules & Guidelines</h2>
+      
+      <div class="row">
+        <!-- Left Column (8 columns) -->
+        <div class="col-lg-8">
+          <div class="rules-card">
+            <h4 class="d-flex align-items-center"><i class="fas fa-trophy me-2"></i> Evaluation & Scoring</h4>
+            <ul class="rules-list">
+              <li><strong>Primary Metric:</strong> Character Error Rate (CER) with custom scoring rules</li>
+              <li><strong>Format Requirement:</strong> Predictions must match French license plate format: <code>AA-123-AA</code> (2 letters, 3 digits, 2 letters)</li>
+              <li><strong>Scoring System:</strong>
+                <ul class="nested-list">
+                  <li>Correct character at correct position: <span class="badge bg-success">+2 points</span></li>
+                  <li>No prediction for character: <span class="badge bg-secondary">0 points</span></li>
+                  <li>Wrong character (hallucination): <span class="badge bg-danger">-1 point</span></li>
+                </ul>
+              </li>
+              <li><strong>Maximum Score:</strong> 14 points (7 characters × 2 points)</li>
+              <li><strong>Minimum Score:</strong> -7 points (7 characters × -1 point)</li>
+            </ul>
           </div>
           
-          <div class="col-lg-4">
-            <!-- Prohibited Practices Card -->
-            <div class="rules-card">
-              <h4 class="d-flex align-items-center"><i class="fas fa-ban me-2"></i> Prohibited Practices</h4>
-              <ul class="rules-list">
-                <li>Manual annotation or manipulation of test data</li>
-                <li>Using undisclosed external data</li>
-                <li>Multiple accounts or team splitting</li>
-                <li>Attempting to reverse-engineer the blind test set</li>
-                <li>Any form of cheating or unfair advantage</li>
-              </ul>
-            </div>
-
-            <!-- Permitted Practices Card -->
-            <div class="rules-card mt-4">
-              <h4 class="d-flex align-items-center"><i class="fas fa-check-circle me-2"></i> Permitted Practices</h4>
-              <ul class="rules-list">
-                <li>Use of any publicly available data for training</li>
-                <li>Pre-trained models and transfer learning</li>
-                <li>Data augmentation and synthetic data generation</li>
-                <li>Ensemble methods and model combination</li>
-                <li>External tools for preprocessing</li>
-              </ul>
-            </div>
-
-            <!-- Recommended Public Datasets Card -->
-            <div class="rules-card mt-4">
-              <h4 class="d-flex align-items-center"><i class="fas fa-database me-2"></i> Recommended Public Datasets</h4>
-              <p class="small">Participants are encouraged to use additional data. Below are some publicly available license plate datasets suitable for pre‑training or data augmentation. Please respect each dataset's license terms and citation requirements.</p>
-              <ul class="rules-list dataset-list">
-                <li><strong>UFPR-SR-Plates</strong> – <a href="https://github.com/valfride/UFPR-SR-Plates/" target="_blank">GitHub</a><br>100k images with paired low/high-resolution sequences for super‑resolution. Real‑world surveillance conditions.</li>
-                <li><strong>Realistic License Plate Restoration and Recognition (RLPR)</strong> – <a href="https://data.mendeley.com/datasets/4rs5wpvckz" target="_blank">Mendeley Data</a><br>31‑frame low‑quality sequences paired with high‑quality targets for multi‑frame restoration.</li>
-                <li><strong>Chinese City Parking Dataset (CCPD)</strong> – <a href="https://github.com/detectRecog/CCPD" target="_blank">GitHub</a><br>Over 250k images with subsets for blur, tilt, weather, distance. Widely used for detection/recognition.</li>
-                <li><strong>Ukrainian License Plate Dataset (Synthetic)</strong> – <a href="https://zenodo.org/records/13342103" target="_blank">Zenodo</a><br>10k synthetic LP images generated with diffusion models.</li>
-                <li><strong>European License Plates (ELP 1.0)</strong> – <a href="https://github.com/Emirismail/ELP" target="_blank">GitHub</a><br>Covers 20 European countries with diverse plate formats.</li>
-              </ul>
-              <p class="text-muted small mt-2 mb-0"><i class="fas fa-info-circle me-1"></i> Some datasets may require registration or license acceptance.</p>
-            </div>
+          <div class="rules-card mt-4">
+            <h4 class="d-flex align-items-center"><i class="fas fa-code me-2"></i> Submission Requirements</h4>
+            <ul class="rules-list">
+              <li><strong>Final Submission:</strong> Must include both:
+                <ul class="nested-list">
+                  <li>Super-resolution outputs for all test sequences</li>
+                  <li>2-page extended abstract in IEEE conference format</li>
+                </ul>
+              </li>
+              <li><strong>Output Format:</strong> CSV file with columns: <code>sequence_id</code> and <code>predicted_lp</code></li>
+              <li><strong>Abstract Format:</strong> PDF following IEEE ICIP 2026 template guidelines</li>
+              <li><strong>Model Submission:</strong> Top-performing teams must submit reproducible Docker containers on invitation. See the Docker preparation and submission guidelines.</li>
+            </ul>
           </div>
         </div>
         
-        <div class="rules-card mt-4">
-          <h4 class="d-flex align-items-center"><i class="fas fa-file-alt me-2"></i> 2-Page Extended Abstract Requirements</h4>
-          <p>The extended abstract is mandatory for all final submissions and must include:</p>
-          <ul class="rules-list">
-            <li>Complete description of the proposed super-resolution method</li>
-            <li>Architecture details and training methodology</li>
-            <li>List of all external data used for training</li>
-            <li>Experimental results on the validation set</li>
-            <li>References to related work</li>
-            <li>Compliance with IEEE ICIP 2026 formatting guidelines</li>
-          </ul>
-        </div>
-      </section>
+        <!-- Right Column (4 columns) -->
+        <div class="col-lg-4">
+          <!-- Prohibited Practices Card -->
+          <div class="rules-card">
+            <h4 class="d-flex align-items-center"><i class="fas fa-ban me-2"></i> Prohibited Practices</h4>
+            <ul class="rules-list">
+              <li>Manual annotation or manipulation of test data</li>
+              <li>Using undisclosed external data</li>
+              <li>Multiple accounts or team splitting</li>
+              <li>Attempting to reverse-engineer the blind test set</li>
+              <li>Any form of cheating or unfair advantage</li>
+            </ul>
+          </div>
 
+          <!-- Permitted Practices Card -->
+          <div class="rules-card mt-4">
+            <h4 class="d-flex align-items-center"><i class="fas fa-check-circle me-2"></i> Permitted Practices</h4>
+            <ul class="rules-list">
+              <li>Use of any publicly available data for training</li>
+              <li>Pre-trained models and transfer learning</li>
+              <li>Data augmentation and synthetic data generation</li>
+              <li>Ensemble methods and model combination</li>
+              <li>External tools for preprocessing</li>
+            </ul>
+          </div>
+        </div>
+      </div> <!-- End of row -->
+
+      <!-- FULL WIDTH: Recommended Public Datasets Card -->
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="rules-card">
+            <h4 class="d-flex align-items-center"><i class="fas fa-database me-2"></i> Recommended Public Datasets</h4>
+            <p class="small">Participants are encouraged to use additional data. Below are some publicly available license plate datasets suitable for pre‑training or data augmentation. Please respect each dataset's license terms and citation requirements.</p>
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="rules-list dataset-list">
+                  <li><strong>UFPR-SR-Plates</strong> – <a href="https://github.com/valfride/UFPR-SR-Plates/" target="_blank">GitHub</a><br>100k images with paired low/high-resolution sequences for super‑resolution. Real‑world surveillance conditions.</li>
+                  <li><strong>Realistic License Plate Restoration and Recognition (RLPR)</strong> – <a href="https://data.mendeley.com/datasets/4rs5wpvckz" target="_blank">Mendeley Data</a><br>31‑frame low‑quality sequences paired with high‑quality targets for multi‑frame restoration.</li>
+                  <li><strong>Chinese City Parking Dataset (CCPD)</strong> – <a href="https://github.com/detectRecog/CCPD" target="_blank">GitHub</a><br>Over 250k images with subsets for blur, tilt, weather, distance. Widely used for detection/recognition.</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="rules-list dataset-list">
+                  <li><strong>Ukrainian License Plate Dataset (Synthetic)</strong> – <a href="https://zenodo.org/records/13342103" target="_blank">Zenodo</a><br>10k synthetic LP images generated with diffusion models.</li>
+                  <li><strong>European License Plates (ELP 1.0)</strong> – <a href="https://github.com/Emirismail/ELP" target="_blank">GitHub</a><br>Covers 20 European countries with diverse plate formats.</li>
+                </ul>
+              </div>
+            </div>
+            <p class="text-muted small mt-2 mb-0"><i class="fas fa-info-circle me-1"></i> Some datasets may require registration or license acceptance.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 2-Page Extended Abstract Card (also full width) -->
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="rules-card">
+            <h4 class="d-flex align-items-center"><i class="fas fa-file-alt me-2"></i> 2-Page Extended Abstract Requirements</h4>
+            <p>The extended abstract is mandatory for all final submissions and must include:</p>
+            <ul class="rules-list">
+              <li>Complete description of the proposed super-resolution method</li>
+              <li>Architecture details and training methodology</li>
+              <li>List of all external data used for training</li>
+              <li>Experimental results on the validation set</li>
+              <li>References to related work</li>
+              <li>Compliance with IEEE ICIP 2026 formatting guidelines</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
       <section class="rules-section">
         <h2 class="h3 section-title">Registration Process</h2>
         
@@ -289,8 +307,8 @@
           <div class="process-step">
             <div class="step-number">1</div>
             <div class="step-content">
-              <h5>Complete Registration Form</h5>
-              <p>Fill out the official registration form with team member details and contact information.</p>
+              <h5>Platform Access</h5>
+              <p>Receive credentials for CodaBench challenge platform and dataset download instructions.</p>
             </div>
           </div>
 
@@ -305,8 +323,8 @@
           <div class="process-step">
             <div class="step-number">3</div>
             <div class="step-content">
-              <h5>Platform Access</h5>
-              <p>Receive credentials for CodaBench challenge platform and dataset download instructions.</p>
+              <h5>Complete Registration Form</h5>
+              <p>Fill out the official registration form with team member details and contact information.</p>
             </div>
           </div>
 
