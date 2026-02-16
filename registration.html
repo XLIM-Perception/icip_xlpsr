@@ -219,19 +219,46 @@
               </ul>
             </div>
             
-            <div class="rules-card mt-4">
-              <h4 class="d-flex align-items-center"><i class="fas fa-check-circle me-2"></i> Permitted Practices</h4>
-              <ul class="rules-list">
-                <li>Use of any publicly available data for training</li>
-                <li>Pre-trained models and transfer learning</li>
-                <li>Data augmentation and synthetic data generation</li>
-                <li>Ensemble methods and model combination</li>
-                <li>External tools for preprocessing</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+            <div class="col-lg-4">
+              <div class="rules-card">
+                <h4 class="d-flex align-items-center"><i class="fas fa-ban me-2"></i> Prohibited Practices</h4>
+                <ul class="rules-list">
+                  <li>Manual annotation or manipulation of test data</li>
+                  <li>Using undisclosed external data</li>
+                  <li>Multiple accounts or team splitting</li>
+                  <li>Attempting to reverse-engineer the blind test set</li>
+                  <li>Any form of cheating or unfair advantage</li>
+                </ul>
+              </div>
 
+              <div class="rules-card mt-4">
+                <h4 class="d-flex align-items-center"><i class="fas fa-check-circle me-2"></i> Permitted Practices</h4>
+                <ul class="rules-list">
+                  <li>Use of any publicly available data for training</li>
+                  <li>Pre-trained models and transfer learning</li>
+                  <li>Data augmentation and synthetic data generation</li>
+                  <li>Ensemble methods and model combination</li>
+                  <li>External tools for preprocessing</li>
+                </ul>
+              </div>
+
+              <!-- NEW: Recommended Public Datasets Card -->
+              <div class="rules-card mt-4">
+                <h4 class="d-flex align-items-center"><i class="fas fa-database me-2"></i> Recommended Public Datasets</h4>
+                <p class="small">Participants are encouraged to use additional data. Below are some publicly available license plate datasets suitable for pre‑training or data augmentation. Please respect each dataset's license terms and citation requirements.</p>
+                <ul class="rules-list dataset-list">
+                  <li><strong>UFPR-SR-Plates</strong> – <a href="https://github.com/valfride/UFPR-SR-Plates/" target="_blank">GitHub</a><br>100k images with paired low/high-resolution sequences for super‑resolution. Real‑world surveillance conditions.</li>
+                  <li><strong>Realistic License Plate Restoration and Recognition (RLPR)</strong> – <a href="https://data.mendeley.com/datasets/4rs5wpvckz" target="_blank">Mendeley Data</a><br>31‑frame low‑quality sequences paired with high‑quality targets for multi‑frame restoration.</li>
+                  <li><strong>Chinese City Parking Dataset (CCPD)</strong> – <a href="https://github.com/detectRecog/CCPD" target="_blank">GitHub</a><br>Over 250k images with subsets for blur, tilt, weather, distance. Widely used for detection/recognition.</li>
+                  <li><strong>Ukrainian License Plate Dataset (Synthetic)</strong> – <a href="https://zenodo.org/records/13342103" target="_blank">Zenodo</a><br>10k synthetic LP images generated with diffusion models.</li>
+                  <li><strong>European License Plates (ELP 1.0)</strong> – <a href="https://github.com/Emirismail/ELP" target="_blank">GitHub</a><br>Covers 20 European countries with diverse plate formats.</li>
+                </ul>
+                <p class="text-muted small mt-2 mb-0"><i class="fas fa-info-circle me-1"></i> Some datasets may require registration or license acceptance.</p>
+              </div>
+            </div>
+        
+
+        
         <div class="rules-card mt-4">
           <h4 class="d-flex align-items-center"><i class="fas fa-file-alt me-2"></i> 2-Page Extended Abstract Requirements</h4>
           <p>The extended abstract is mandatory for all final submissions and must include:</p>

@@ -259,3 +259,23 @@
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
 }
+
+/* Dataset list styling */
+.dataset-list li {
+    margin-bottom: 0.75rem;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 0.5rem;
+}
+.dataset-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.dataset-list a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+.dataset-list a:hover {
+    text-decoration: underline;
+}
