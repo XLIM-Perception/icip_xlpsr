@@ -198,13 +198,13 @@
           <div class="rules-card">
             <h4 class="d-flex align-items-center"><i class="fas fa-trophy me-2"></i> Evaluation & Scoring</h4>
             <ul class="rules-list">
-              <li><strong>Primary Metric:</strong> Character Error Rate (CER) with custom scoring rules</li>
-              <li><strong>Format Requirement:</strong> Predictions must match French license plate format: <code>AA-123-AA</code> (2 letters, 3 digits, 2 letters)</li>
-              <li><strong>Scoring System:</strong>
-                <ul class="nested-list">
-                  <li>Correct character at correct position: <span class="badge bg-success">+2 points</span></li>
-                  <li>No prediction for character: <span class="badge bg-secondary">0 points</span></li>
-                  <li>Wrong character (hallucination): <span class="badge bg-danger">-1 point</span></li>
+              <li><strong> Primary Metric:</strong> Character Error Rate (CER) with custom scoring rules</li>
+              <li><strong> Format Requirement:</strong> Predictions must match French license plate format: old license plates <code>123-AAA-12</code> or <code>1234-AA-12</code> (3 or 4 degits, 2 or 3 letters, 2 degits), and new license late <code>AA-123-AA</code> (2 letters, 3 digits, 2 letters).</li>
+              <li><strong> Scoring System:</strong>
+                <ul>
+                  <li> Correct character at correct position: <span class="badge bg-success">+2 points</span></li>
+                  <li> No prediction for character: <span class="badge bg-secondary">0 points</span></li>
+                  <li> Wrong character (hallucination): <span class="badge bg-danger">-1 point</span></li>
                 </ul>
               </li>
               <li><strong>Maximum Score:</strong> 14 points (7 characters × 2 points)</li>
@@ -216,7 +216,7 @@
             <h4 class="d-flex align-items-center"><i class="fas fa-code me-2"></i> Submission Requirements</h4>
             <ul class="rules-list">
               <li><strong>Final Submission:</strong> Must include both:
-                <ul class="nested-list">
+                <ul>
                   <li>Super-resolution outputs for all test sequences</li>
                   <li>2-page extended abstract in IEEE conference format</li>
                 </ul>
