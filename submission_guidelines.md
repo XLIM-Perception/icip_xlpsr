@@ -113,7 +113,7 @@ This script should:
 
 ### Input Interface
 
-During evaluation, the system will mount the `/input` directory. It will contain a `csv` file listing all the available sequences, and the sequences in separate folders. Each folder will contain the frames of each video (in `png` format) and a `meta.json` file, indicating the bounding box of the license plate, and for the test set the ground truth text. 
+During evaluation, the system will mount the `/input` directory. It will contain a `csv` file listing all the available sequences, and the sequences in separate folders. Each folder will contain the frames for each sequence (in `png` format). 
 
 ```
 /input
@@ -122,7 +122,7 @@ During evaluation, the system will mount the `/input` directory. It will contain
 Example structure:
 ```
 /input
-  ├── all_samples.csv
+  ├── all_sequences.csv
   │
   ├── seq_001/
   │     ├── img_01.png
@@ -150,7 +150,7 @@ Your code must **only read** from this directory.
 
 ### Output Interface
 
-Your container must write all results to the `/output` directory. One folder (with the same name as the input) per result. Each output folder must contain a super-resolved image `sr.png` and the recognized `text.txt`.
+Your container must write all results to the `/output` directory. One folder (with the same name as the input) per sequence. Each output folder must contain a super-resolved image `sr.png` and the recognized `text.txt`.
 
 ```
 /output
