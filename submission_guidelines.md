@@ -76,7 +76,7 @@ Copy your source and weights into `/workspace/`  and the  `run.sh` entrypoint
 
 # ---------- COPY YOUR SOLUTION ----------
 COPY  src/    /workspace/
-COPY  src/run.sh  /workspace/
+COPY  run.sh  /workspace/
 ```
 
 
@@ -124,25 +124,22 @@ Example structure:
 /input
   ├── all_samples.csv
   │
-  ├── sample_0001/
+  ├── seq_001/
   │     ├── img_01.png
   │     ├── img_02.png
   │     ├── img_03.png
-  │     ├── meta.json (bbox, optionally ground-truth text)
   │     └── ...
   │
-  ├── sample_0002/
+  ├── seq_002/
   │     ├── img_01.png
   │     ├── img_02.png
   │     ├── img_03.png
-  │     ├── data.json
   │     └── ...
   │
-  └── sample_0003/
+  └── seq_003/
         ├── img_01.png
         ├── img_02.png
         ├── img_03.png
-  │     ├── data.json
         └── ...
 
 ```
@@ -162,15 +159,15 @@ Your container must write all results to the `/output` directory. One folder (wi
 Example:
 ```
 /output
-  ├── sample_0001/
+  ├── seq_001/
   │     ├── sr.png
   │     └── text.txt
   │
-  ├── sample_0002/
+  ├── seq_002/
   │     ├── sr.png
   │     └── text.txt
   │
-  └── sample_0003/
+  └── seq_003/
         ├── sr.png
         └── text.txt
 ```
@@ -199,6 +196,9 @@ docker run \
   your_image:tag \
   bash /workspace/run.sh
 ```
+
+⚠️ A common issue is that the `input` and `output` directories in the host computer do not have the necessary permissions for the container to access them. The simplest way to fix this is by setting the permissions of both directories (and subdirectories) to 777 (ie.  `chmod +R 777   input_folder`)
+
 
 ### Security
 - No internet access
@@ -352,4 +352,3 @@ This challenge uses a **sandboxed black-box evaluation model**:
 - Internal implementation is irrelevant to scoring
 
 Design for **determinism, reproducibility, and robustness**.
-
